@@ -1,0 +1,40 @@
+<configuration debug="true" scan="true" scanPeriod="10 minutes">
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%green(nils-spring-ai-app) - %cyan(%date [%thread] %-5level %logger{36}) - %message%n)
+            </pattern>
+        </encoder>
+    </appender>
+
+    <!--
+    <appender name="DAILY_APP_LOG_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/Users/nils/Documents/applogs.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>/Users/nilseri/Documents/applogs.%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%green(bookstore-service) - %cyan(%date [%thread] %-5level %logger{36}) - %message%n)
+            </pattern>
+        </encoder>
+    </appender>
+    -->
+
+    <logger name="dev.nils.spring.ai" level="DEBUG" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+
+    <logger name="org.springframework" level="INFO"  additivity="false" >
+        <appender-ref ref="STDOUT" />
+    </logger>
+
+    <logger name="org.springframework.data" level="DEBUG"  additivity="false" >
+        <appender-ref ref="STDOUT" />
+    </logger>
+
+    <root level="TRACE">
+        <appender-ref ref="STDOUT"/>
+        <!-- <appender-ref ref="DAILY_APP_LOG_FILE"/> -->
+    </root>
+
+</configuration>

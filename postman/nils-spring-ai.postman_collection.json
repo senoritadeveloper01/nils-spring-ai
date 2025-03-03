@@ -1,0 +1,333 @@
+{
+	"info": {
+		"_postman_id": "673a7308-91b8-4257-b779-e8d3d24feb2b",
+		"name": "nils-spring-ai",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9096111"
+	},
+	"item": [
+		{
+			"name": "Generate API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/v1/ai/generate?promptMessage=create%20a%20catchy%20headline%20for%20%22motivation%22",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"ai",
+						"generate"
+					],
+					"query": [
+						{
+							"key": "promptMessage",
+							"value": "create%20a%20catchy%20headline%20for%20%22motivation%22"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generate Stream API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/v1/ai/stream/generate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"ai",
+						"stream",
+						"generate"
+					],
+					"query": [
+						{
+							"key": "promptMessage",
+							"value": "create%20a%20catchy%20headline%20for%20%22motivation%22",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generate Chuck Norris Style Joke",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/v1/ai/generate/chuck-norris/joke/potatoes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"ai",
+						"generate",
+						"chuck-norris",
+						"joke",
+						"potatoes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Classification API",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "Basketball fans can now watch the game on the brand-new NBA app for Apple Vision Pro.",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/v1/ai/classify",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"ai",
+						"classify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Movies By Actors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/v1/ai/structured/movies-by-actors?actors=Benedict%20Cumberbatch,Judi%20Dench,Ralph%20Fiennes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"ai",
+						"structured",
+						"movies-by-actors"
+					],
+					"query": [
+						{
+							"key": "actors",
+							"value": "Benedict%20Cumberbatch,Judi%20Dench,Ralph%20Fiennes"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Movies By Actor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/v1/ai/structured/movies-by-actor?actor=Benedict%20Cumberbatch",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"ai",
+						"structured",
+						"movies-by-actor"
+					],
+					"query": [
+						{
+							"key": "actor",
+							"value": "Benedict%20Cumberbatch"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Most Popular Songs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/v1/ai/spotify/popular-songs?genre=brit%20rock",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"ai",
+						"spotify",
+						"popular-songs"
+					],
+					"query": [
+						{
+							"key": "genre",
+							"value": "brit%20rock"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Function Calling Chat - Accounts List",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "Can you list me all the accounts?",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/v1/ai/function-calling/chat",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"ai",
+						"function-calling",
+						"chat"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Function Calling Chat - Account Add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "Add account named \"James Brown\"",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/v1/ai/function-calling/chat",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"ai",
+						"function-calling",
+						"chat"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ingest PDF API",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/v1/ai/rag/ingestPdf?fileURL=https://images-cdn.fantasyflightgames.com/filer_public/9f/aa/9faa23a3-9f71-4c77-865f-bba4aac8a258/runewars-revised-_rulebook.pdf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"ai",
+						"rag",
+						"ingestPdf"
+					],
+					"query": [
+						{
+							"key": "fileURL",
+							"value": "https://images-cdn.fantasyflightgames.com/filer_public/9f/aa/9faa23a3-9f71-4c77-865f-bba4aac8a258/runewars-revised-_rulebook.pdf"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RAG Query API",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/v1/ai/rag/query?question=where do you place the reward card after obtaining it?",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"ai",
+						"rag",
+						"query"
+					],
+					"query": [
+						{
+							"key": "question",
+							"value": "where do you place the reward card after obtaining it?"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

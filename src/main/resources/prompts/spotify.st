@@ -1,0 +1,1 @@
+List 10 of the Spotify's most popular songs in {genre} along with their monthly listener counts. If you don't know the answer, just say "I don't know".
